@@ -1,17 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title></title>
-        <link rel="stylesheet" href="styles.css">
-        <h1><u>Krish's Recipe Book<u></h1>
-        <img src="https://lh3.googleusercontent.com/hpQj0FdHTPCqFoyay9wWyWlP2RWcxmIcyvUZ_rjMwxtudxUsE7gTr36IqLYKLqP5sEDc8nINYpuV6R8zIli9E3D59bMeHy4u9eNHTh3LxIeec-kdZYEl6WzH3mmuyekEsA=w1280" width="450" height="350">
-        <ul>
-            <div class="flex-container">
-                <div class="box1"><button><a href="recipes/tomatosoup.html" target="_blank_">Tomato Soup</a></button></div>
-                <div class="box2"><button><a href="recipes/veggieomelete.html" target="_blank_">Veggie Omelette</a></button></div>
-                <div class="box3"><button><a href="recipes/frenchtoast.html"  target="_blank_">French Toast</a></button></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krish's Blackjack Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Krish's Blackjack Website</h1>
+    </header>
+
+    <!-- Scoreboard for games won -->
+    <div class="scoreboard">
+        <div>Dealer Games Won: <span id="dealer-games-won">0</span></div>
+        <div>Player Games Won: <span id="user-games-won">0</span></div>
+    </div>
+
+    <main class="game">
+        <div class="hand">
+            <h2>Dealer</h2>
+            <div class="cards">
+                <img class="card" id="dealerCard1" src="images/blank.svg">
+                <img class="card" id="dealerCard2" src="images/blank.svg">
+                <img class="card" id="dealerCard3" src="images/blank.svg">
+                <img class="card" id="dealerCard4" src="images/blank.svg">
             </div>
-        </ul>
+            <div class="score">Score: <span id="dealerScore" class="score-value">0</span></div>
+        </div>
+
+        <div class="hand">
+            <h2>Player</h2>
+            <div class="cards">
+                <img class="card" id="userCard1" src="images/blank.svg">
+                <img class="card" id="userCard2" src="images/blank.svg">
+                <img class="card" id="userCard3" src="images/blank.svg">
+                <img class="card" id="userCard4" src="images/blank.svg">
+            </div>
+            <div class="score" >Score: <span id="userScore" class="score-value">0</span></div>
+        </div>
+    </main>
+
+    <div class="message" id="message">
+        Your Turn!
+    </div>
+
+    <div class="actions">
+        <button class="hit" onclick="hit()" disabled="true" id="hit">Hit</button>
+        <button class="stand" onclick="stand()" disabled="true" id="stand">Stand</button>
+        <button class="reset" onclick="reset()" id="reset">Reset</button>
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
